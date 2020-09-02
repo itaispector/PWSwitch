@@ -18,6 +18,15 @@ open class PWSwitch: UIControl {
     open private(set) var on = false
     
     /// UIAppearance compatible property
+    @IBInspectable open dynamic var trackBorderWidth: CGFloat { // UI_APPEARANCE_SELECTOR
+        get { return self._trackBorderWidth }
+        set {
+            self._trackBorderWidth = newValue
+            self.backLayer.borderWidth = _trackBorderWidth
+        }
+    }
+    fileprivate var _trackBorderWidth: CGFloat = 1.0
+    
     @IBInspectable open dynamic var trackOffBorderColor: UIColor { // UI_APPEARANCE_SELECTOR
         get { return self._trackOffBorderColor }
         set {
@@ -182,6 +191,8 @@ open class PWSwitch: UIControl {
         }
     }
     fileprivate var _thumbDelta:CGFloat = 6
+    
+
     
     let scale = UIScreen.main.scale
     
