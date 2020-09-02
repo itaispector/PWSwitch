@@ -223,7 +223,7 @@ open class PWSwitch: UIControl {
         backLayer.cornerRadius = _cornerRadius
         backLayer.borderWidth = 1
         backLayer.borderColor = _trackOffBorderColor.cgColor
-        backLayer.backgroundColor = _trackOffFillColor.cgColor
+        backLayer.backgroundColor = UIColor.clear.cgColor
         layer.addSublayer(backLayer)
         
         thumbLayer = CALayer()
